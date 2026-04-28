@@ -4,7 +4,7 @@ Shared in-memory mailbox storage used by the SMTP server.
 Each message is stored as a dict with the following keys:
     - from_addr  (str)          : envelope sender
     - to_addrs   (list[str])    : envelope recipients
-    - data        (str)          : raw message bytes (headers + body)
+    - data        (str)          : raw message content (headers + body)
     - size        (int)          : byte length of *data*
 """
 

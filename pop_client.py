@@ -144,7 +144,9 @@ class POP3Client:
 
     def _send(self, line: str) -> None:
         data = (line + "\r\n").encode()
-        logger.debug("C: %s", line)
+        # Redact the PASS argument to prevent credentials appearing in logs
+        log_line = line if not line.upper().startswith("PASS ") else "PASS ****"
+        logger.debug("C: %s", log_line)
         self._sock.sendall(data)
 
     def _read_line(self) -> str:

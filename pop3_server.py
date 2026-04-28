@@ -11,8 +11,8 @@ USER / PASS / STAT / LIST / RETR / DELE / RSET / NOOP / QUIT
 
 Authentication
 --------------
-Any username is accepted; the password must equal ``"password"`` (or the
-value passed to :class:`POP3Server` as *password*).
+Any username is accepted; the password must match the value passed to
+:class:`POP3Server` as *password* (default ``"password"``).
 """
 
 from __future__ import annotations
